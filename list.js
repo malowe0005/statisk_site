@@ -6,17 +6,16 @@ fetch(`https://kea-alt-del.dk/t7/api/products/`)
 
 function showList(products) {
   console.log(products);
-  let markup = "";
 
-  products
-    .map((product) => {
-      markup += `<div class="productlist_subgrid">
+  const markup = products
+    .map(
+      (product) => `<div class="productlist_subgrid">
         <a href="produkt.html"><img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="${product.productdisplayname}" /></a>
         <h3>${product.productdisplayname}</h3>
         <p>${product.articletype} - ${product.usagetype}</p>
          <p>DKK ${product.price},-</p>
-      </div>`;
-    })
+      </div>`
+    )
 
     .join("");
   console.log(markup);
