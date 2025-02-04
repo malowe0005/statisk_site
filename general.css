@@ -107,29 +107,6 @@ h3 {
   grid-row: 4;
 }
 
-.sale {
-  text-align: right;
-  margin-right: 1rem;
-  grid-row: 4;
-  grid-column: 2 / span 1;
-
-  color: red;
-  font-weight: 800;
-}
-
-.prev {
-  text-decoration: line-through;
-}
-
-.now {
-  margin-right: 1rem;
-  grid-row: 4;
-  grid-column: 2 / span 1;
-
-  color: red;
-  font-weight: 800;
-}
-
 .product_grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -207,4 +184,52 @@ h3 {
   color: rgb(7, 7, 167);
   background-color: rgb(245, 245, 245);
   font-weight: 600;
+}
+
+/* sale + sold out */
+
+.onSale {
+  text-align: right;
+  grid-row: 5;
+  grid-column: 2 / span 1;
+
+  color: red;
+  font-weight: 800;
+
+  visibility: hidden;
+}
+
+.sale {
+  grid-row: 5;
+  grid-column: 1 / span 1;
+
+  color: red;
+  font-weight: 800;
+
+  visibility: hidden;
+}
+
+.prev {
+  text-decoration: line-through;
+}
+
+.soldOut {
+  filter: opacity(50%);
+}
+
+.out {
+  margin-top: -3vw;
+  font-weight: 700;
+
+  visibility: hidden;
+}
+
+.soldOut:hover {
+  mask-image: url(soldOut.svg);
+  mask-position: center;
+  place-self: center;
+}
+
+.show {
+  visibility: visible;
 }
